@@ -22,14 +22,14 @@
     * **film.html**: html file corresponding to the film view.
     * **index.html**: html file corresponding to the index view.
   * **admin.py**: all the admin configuration for managing the django application.
-  * **apps.py**: here is the appMediaCenter declared
+  * **apps.py**: here is the appMediaCenter declared.
   * **models.py**: here the different data structures (models) used in the application are declared. 
   * **urls.py**: here the different routes used in the application are declared.
-  * **views.py**: different views used in the application
-* **MediaCenter**: Default django proyect folder
-  * **settings.py**: server settings are configured here
+  * **views.py**: different views used in the application.
+* **MediaCenter**: Default django proyect folder.
+  * **settings.py**: server settings are configured here.
   * **urls.py**: routes of the proyect. link between application urls.
-  * **wsgi.py**: wsgi config for the proyect. Wsgi is used to connect ***Django*** with ***Gunicorn*** 
+  * **wsgi.py**: wsgi config for the proyect. Wsgi is used to connect ***Django*** with ***Gunicorn***.
 * **db.sqlite3**: db for the proyect. Is preferible to use other SGBD as ***mysql*** or ***postgresql***; ***sqlite*** is for little development projects.
 * **manage.py**: ***Django's*** command-line utility for administrative tasks. Run administrative tasks.
 
