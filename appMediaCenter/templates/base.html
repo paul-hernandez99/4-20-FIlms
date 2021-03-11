@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block styles %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div id="tm-bg"></div>
+    <div id="tm-wrap">
+        <div class="tm-main-content">
+          <div class="container tm-site-header-container">
+            <div id="fh5co-blog">
+              <div class="container">
+                <div class="bloque-titulo">
+                  <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                    <h2><a href="{% url 'index' %}">4:20 FILMS</a></h2>
+                    <p>Here you have the best film selection. Watch out the new updates!</p>
+                  </div>
+                </div>
+                {% block content %}{% endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script>var film_url_img = "/static/{{film.img.name}}";</script>
+<script type="text/javascript" src="{% static 'js/film.js' %}"></script>
+{% endblock %}
+
+{% block title %}4:20{% endblock %}
+
+{% block content %}
+              <div id="fh5co-blog">
+                <div class="container">
+                    {% if film %}
+                    <div class="center">
+                      <div class="individual">
+                        <div class="blog-text">
+                          <h3>{{film.title}}</h3>
+                          <span>Director: <a href="{% url 'director' film.director.id %}">{{film.director.name}}</a></span>
+                          <p><span class="posted_on">Año:</span> <span class="orange">{{film.date.year}}</span></p>
+                          <p>{{film.synopsis}}</p>
+                          <div class="player">
+                            {% load static %}
+                            <video controls>
+                              <source src="{% static film.video.name %}" type="video/mp4">
+                              <track label="English" kind="subtitles" src="{% static film.subtitle.name %}" srclang="en" default>
+                            </video>
+                          </div>
+                          <div class="pading"></div>
+                          <p id="prueba"></p>
+                          <p><span class="byfernandito">by</span> <span class="orange byfernandito">fernandito</span></p>
+                          <p class="uploaded">{{film.date_upload}}</p>
+                          <ul class="stuff">
+                            <li><i class="icon-heart2"></i>{{film.likes}}</li>
+                            <!--Pendiente crear visualizaciones!<li><i class="icon-eye2"></i>308</li>-->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    {% else %}
+                    <p>No existe el filme seleccionado.</p>
+                    {% endif %}
+                </div>
+              </div>
+{% endblock %}

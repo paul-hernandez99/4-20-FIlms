@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script>var film_url_img = "static/{{film.img.name}}";</script>
+<script type="text/javascript" src="{% static 'js/film.js' %}"></script>
+{% endblock %}
+
+{% block title %}4:20{% endblock %}
+
+{% block content %}
+              <div id="fh5co-blog">
+                <div class="container">
+                    {% if director %}
+                    <div class="center">
+                      <div class="individual">
+                        <div class="blog-text">
+                          <h3>{{director.name}}</h3>
+                          <p>{{director.biography}}</p>
+                          {% load static %}
+                          <div class="padding">
+                            <div class="director" style="background-image: url({% static director.image.name %});background-size: cover;"></div>
+                          </div>
+                          <div class="pading"></div>
+                          <p id="prueba"></p>
+                          <p><span class="byfernandito">by</span> <span class="orange byfernandito">fernandito</span></p>
+                          <ul class="stuff">
+                            <li><i class="icon-heart2"></i>{{director.likes}}</li>
+                            <!--Pendiente crear visualizaciones!<li><i class="icon-eye2"></i>308</li>-->
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    {% else %}
+                    <p>No existe el director seleccionado.</p>
+                    {% endif %}
+                </div>
+              </div>
+{% endblock %}

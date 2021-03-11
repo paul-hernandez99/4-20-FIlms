@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
+{% block title %}4:20{% endblock %}
+
+{% block content %}
+                <div class="row">
+                  {% if films %}
+                  {% for film in films %}
+                  <div class="col-md-4">
+                    <div class="fh5co-blog animate-box">
+                      {% load static %}
+                      <a href="{% url 'film' film.id %}" class="blog-bg" style="background-image: url({% static film.img.name %});"></a>
+                      <div class="blog-text">
+                        <h3><a href="{% url 'film' film.id %}">{{film.title}}</a></h3>
+                        <span>Director: <a href="{% url 'director' film.director.id %}">{{film.director.name}}</a></span>
+                        <p><span class="posted_on">Año:</span> <span class="orange">{{film.date.year}}</span></p>
+                        <p class="synopsis">{{film.synopsis|truncatewords:20}}</p>
+                        <p><span class="byfernandito">by</span> <span class="orange byfernandito">fernandito</span></p>
+                        <p class="uploaded">{{film.date_upload}}</p>
+                        <ul class="stuff">
+                          <li><i class="icon-heart2"></i>{{film.likes}}</li>
+                          <!--Pendiente crear visualizaciones!<li><i class="icon-eye2"></i>308</li>-->
+                          <li><a href="{% url 'film' film.id %}">Read More<i class="icon-arrow-right22"></i></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  <div class="center">
+                    <button type="button" name="button">Mostrar Mas</button>
+                  </div>
+                  {% else %}
+                  <p>No hay peliculas recientes.</p>
+                  {% endif %}
+                </div>
+{% endblock %}
