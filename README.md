@@ -1,4 +1,4 @@
-# 4-20-FIlms
+# 4-20 Films
 **4:20 Films** is a web-server for film streaming. Films can be either watch online or download via web-page. Developed with ***Django***. For production use, I used ***Nginx-Gunicorn-Django*** combination.
 
 *this repository only include the ***Django*** proyect. ***Nginx*** and ***Gunicorn*** configuration files and sockets are **not included**. Film files are also not included ;)
