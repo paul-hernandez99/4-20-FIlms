@@ -9,19 +9,19 @@
 
 ## Structure
 * **appMediaCenter**: ***Django*** web-server application.
-  * **migrations**: migratios dir
-  * **static**: static dir
+  * **migrations**: migratios dir.
+  * **static**: static dir.
     * **admin**: I included here the admin application's static files. 
-    * **css**: css style files
-    * **fonts**: font files
-    * **js**: js scripts that are used in the server
-    * **media**: the media corresponding to the films and directors 
+    * **css**: css style files.
+    * **fonts**: font files.
+    * **js**: js scripts that are used in the server.
+    * **media**: the media corresponding to the films and directors.
   * **templates**: different templates used in the server.
     * **base.html**: main layout where other html files are inserted on runtime. The other html files extend from this one.
     * **director.html**: html file corresponding to the director view.
     * **film.html**: html file corresponding to the film view.
-    * **index.html**: html file corresponding to the index view
-  * **admin.py**: all the admin configuration for manage the django application.
+    * **index.html**: html file corresponding to the index view.
+  * **admin.py**: all the admin configuration for managing the django application.
   * **apps.py**: here is the appMediaCenter declared
   * **models.py**: here the different data structures (models) used in the application are declared. 
   * **urls.py**: here the different routes used in the application are declared.
@@ -34,4 +34,4 @@
 * **manage.py**: ***Django's*** command-line utility for administrative tasks. Run administrative tasks.
 
 ## Command
-python manage.py runserver
+* python manage.py runserver
